@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Company</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #loanCalculator {
+            display: none;
+            float: right;
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Our Real Estate Company</h1>
+
+    <p>Explore our properties and find your dream home.</p>
+
+    <a href="#" onclick="toggleLoanCalculator()">Loan Calculator</a>
+
+    <div id="loanCalculator">
+        <h2>Loan Calculator</h2>
+        <p><label for="loanAmount">Loan Amount:</label>
+        <input type="text" id="loanAmount" placeholder="Enter loan amount"></p>
+
+        <p><label for="interestRate">Interest Rate (annual):</label>
+        <input type="text" id="interestRate" placeholder="Enter interest rate"></p>
+
+        <p><label for="loanTerm">Loan Term (in Years):</label>
+        <input type="text" id="loanTerm" placeholder="Enter loan term"></p>
+
+        <p><label for="startYear">Start Year:</label>
+        <input type="text" id="startYear" placeholder="Enter start year"></p>
+
+        <button onclick="calculateLoan()">Calculate</button>
+
+        <h3>Amortization Schedule</h3>
+        <table id="amortizationTable">
+            <tr>
+                <th>Year</th>
+                <th>Balance</th>
+                <th>Interest Paid</th>
+                <th>Principal Paid</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function toggleLoanCalculator() {
+            var calculator = document.getElementById('loanCalculator');
+            calculator.style.display = (calculator.style.display === 'none' || calculator.style.display === '') ? 'block' : 'none';
+        }
+
+        function calculateLoan() {
+            var loanAmount = parseFloat(document.getElementById('loanAmount').value);
+            var interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+            var loanTerm = parseInt(document.getElementById('loanTerm').value);
+            var startYear = parseInt(document.getElementById('startYear').value);
+
+            if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm) || isNaN(startYear)) {
+                alert("Please enter valid numerical values for all fields.");
+                return;
+            }
+
+            var monthlyInterestRate = interestRate / 12;
+            var numberOfPayments = loanTerm * 12;
+            var monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+
+            var table = document.getElementById('amortizationTable');
+            table.innerHTML = '<tr><th>Year</th><th>Balance</th><th>Interest Paid</th><th>Principal Paid</th></tr>';
+
+            var balance = loanAmount;
+
+            for (var year = startYear; year < startYear + loanTerm; year++) {
+                for (var month = 1; month <= 12; month++) {
+                    var interestPaid = balance * monthlyInterestRate;
+                    var principalPaid = monthlyPayment - interestPaid;
+
+                    balance -= principalPaid;
+
+                    var row = table.insertRow(-1);
+                    row.insertCell(0).textContent = year;
+                    row.insertCell(1).textContent = balance.toFixed(2);
+                    row.insertCell(2).textContent = interestPaid.toFixed(2);
+                    row.insertCell(3).textContent = principalPaid.toFixed(2);
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

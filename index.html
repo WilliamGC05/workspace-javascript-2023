@@ -1,375 +1,644 @@
 <html>
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-    <meta charset="UTF-8">
-
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
     <!-- Jquery library   ---->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <div class="wrapper">
-        <div class="panelLeft">
-            
-        </div>
+      <div class="panelLeft"></div>
 
-        <div class="practice">
-            <h1>Hello world in JavaScript
-            </h1>
-            <p>
-                Please display a hello world message in JavaScript. 
-                <script>
-                    document.title = "JavaScript Basic -- In class practice -- Yilian Zhang";
-                    // use document.write to display a message
-                    
-                    // use console.log to display a message   
-                  
-                    
-                </script>
-            </p>
-            <p> Please import external file hello.js here. 
-                
-            </p>
-        </div>
+      <div class="practice">
+        <h1>Hello world in JavaScript</h1>
+        <p>
+          Please display a hello world message in JavaScript.
+          <script>
+            document.title =
+              "JavaScript Basic -- In class practice -- William Carroll";
+            // use document.write to display a message
+            document.write("<p> Hello World </p>");
+            document.write("<p> Test </p>");
+            // use console.log to display a message
+            console.log("For Debugging Purpose");
+          </script>
+        </p>
+        <p>
+          Please import external file hello.js here.
+          <script src="js/hello.js"></script>
+        </p>
+      </div>
 
-        <div class="practice">
-            <h1> Variable and Arithemetic Operation</h1>
-            <p> Practice on variables </p>
+      <div class="practice">
+        <h1>Variable and Arithemetic Operation</h1>
+        <p>Practice on variables</p>
+        <script>
+          var a = 3;
+          var b = 4;
+          var c = a + b;
+          var d = a / b;
+          var e = "Hello World";
 
+          console.log(typeof e);
+          document.write("<p> " + a + " + " + b + " = " + c + "</p>");
+          document.write("<p> " + a + " / " + b + " = " + d + "</p>");
 
-        </div>
+          // When to use Let and Var
+          var message = "great!";
+          if (true) {
+            let message = "ok";
+            console.log("IN the if " + message);
+          }
+          console.log(message);
+        </script>
+      </div>
 
-        <div class="practice">
-            <h1> JavaScript Escape Sequence</h1>
-            <p> Write an image to the page </p>
+      <div class="practice">
+        <h1>JavaScript Escape Sequence</h1>
+        <p>Write an image to the page</p>
 
-            <p> Write a table to the page </p>
+        <script>
+          document.write('<img src="img/doorclose.jpg"');
+          document.write('<img src="img/die1.png"');
+        </script>
 
-        </div>
+        <p>Write a table to the page</p>
+        <script>
+          document.write('<table border="1">');
+          document.write('<tr><td colspan="2"> Information </tr></td>');
+          document.write("<tr><td> A </td> <td> B </td></tr>");
+          document.write("</table>");
+        </script>
+      </div>
 
-        <div class="practice">
-            <h1>Window and Document Object </h1>
-            <p> Try alert, open, location, url </p>
-            <script>
+      <div class="practice">
+        <h1>Window and Document Object</h1>
+        <p>Try alert, open, location, url</p>
+        <script>
+          //window.alert("Test Alert Box");
+          console.log(window.location);
+          console.log(document.lastModified);
+        </script>
+      </div>
 
-            </script>
+      <div class="practice">
+        <h1>Get textcontent of an element</h1>
+        <p>
+          Perform arithmetic operation on <span id="num1"> 4 </span> and
+          <span id="num2">5 </span>
+        </p>
+        <p>
+          Result:
+          <script src="js/arith.js"></script>
+        </p>
+      </div>
 
-        </div>
+      <div class="practice">
+        <h1>Get innerHTML of an element</h1>
+        <p id="p1">Paragraph Number One</p>
+        <p id="p2">Paragraph Number two</p>
+        <p id="p3">Paragraph Number three</p>
+        <p>
+          Please write JavaScript code to change the content of each paragraph.​
+        </p>
+        <p>
+          <script>
+            document.getElementById("p1").innerHTML = "<b> Changed </b>";
+            document.getElementById("p2").innerHTML = "<b> P2 Changed </b>";
+            document.getElementById("p3").innerHTML =
+              '<img src="img/button-checkbox.svg">';
+          </script>
+        </p>
+      </div>
 
-        <div class="practice">
-            <h1> Get textcontent of an element </h1>
-            <p>Perform arithmetic operation on <span id="num1"> 4 </span> and <span id="num2">5 </span> </p>
-            <p>Result:
-                <script src="js/arith.js"></script>
-            </p>
+      <div class="practice">
+        <h1>Get input from a form</h1>
+        <p>Please enter your numbers</p>
+        <script>
+          function calculate() {
+            // Input
+            var num1 = parseInt(document.getElementById("fnum").value);
+            var num2 = parseInt(document.getElementsByName("num2")[0].value);
+            var num3 = document.querySelector("#fnum").value;
 
-        </div>
+            // Calculation
+            var result = num1 + num2;
 
-        <div class="practice">
-            <h1> Get innerHTML of an element</h1>
-            <p id="p1"> Paragraph Number One </p>
-            <p id="p2"> Paragraph Number two </p>
-            <p id="p3"> Paragraph Number three </p>
-            <p>Please write JavaScript code to change the content of each paragraph.​
-            <p>
+            // Output
+            document.getElementById("result").textContent = result;
+            console.log(result);
+          }
+        </script>
+        <p>
+          <input type="text" name="num1" id="fnum" /> +
+          <input type="text" name="num2" />
+          <input type="button" value="=" onclick="calculate();" />
+          <label id="result"> ? </label>
+        </p>
+      </div>
 
+      <div class="practice">
+        <h1>JavaScript Events - blur -addEventListener</h1>
+        <form>
+          <p>
+            <label>
+              Name:
+              <input type="text" id="cName" />
+            </label>
+          </p>
 
-        </div>
+          <p id="message"></p>
+          <script>
+            function welcome() {
+              console.log("Event Fired -- Welcome");
+              var name = document.getElementById("cName").value;
+              docuemnt.getElementById("message").textContent =
+                "Welcome " + name;
+            }
 
-        <div class="practice">
-            <h1> Get input from a form </h1>
-            <p> Please enter your numbers </p>
-            <script>
-                function calculate() {
+            // Event and Object
+            var e1 = document.getElementById("cName");
+            console.log(e1);
 
+            // Associate the Event with the Event Handler
+            e1.addEventListener("blur", welcome, false);
+          </script>
+          <p>
+            <label>
+              Email:
+              <input type="text" id="cEmail" />
+            </label>
+          </p>
+        </form>
+      </div>
 
+      <div class="practice">
+        <h1>Practice - Calculate Square</h1>
+        Calculating Square:
+        <input type="text" id="squarenum" placeholder="Type in a number" />
+        <sup> 2 </sup> =
+        <label id="sqresult"> ? </label>
+        <script>
+          function dosquare() {
+            var num = document.getElementById("squarenum").value;
+            var ans = num * num;
+            document.getElementById("sqresult").textContent = " " + ans;
+            console.log("Event");
+          }
+
+          // Event and Object
+          var nums = document.getElementById("squarenum");
+          console.log(nums);
+
+          // Event and addEventListener
+          nums.addEventListener("blur", dosquare, false);
+        </script>
+      </div>
+
+      <div class="practice">
+        <h1>Difference between textcontent and innerHTML</h1>
+        <p>HTML Try it Editor</p>
+        <p>ENTER your code</p>
+        <textarea cols="40" rows="20" id="code"> </textarea>
+
+        <input type="button" id="tryit" value="Click and Display" />
+
+        <div id="message"></div>
+        <script>
+          function changeHTML() {
+            var code = document.getElementById("code").textContent;
+            document.getElementById("messageHTML").innerHTML = code;
+          }
+
+          var btn = document.getElementById("tryit");
+          btn.addEventListener("click", changeHTML, false);
+        </script>
+      </div>
+
+      <div class="practice">
+        <h1>Decision statement - If</h1>
+        Honda Accord Used Car price estimate,
+        <p>
+          Please enter the year of the car
+          <select id="year">
+            <option>2003</option>
+            <option>2004</option></select
+          >.
+        </p>
+        <p>
+          Please enter the condition of the car
+          <select id="condition">
+            <option>Fair</option>
+            <option>Good</option></select
+          >.
+        </p>
+
+        <p id="price"></p>
+
+        <script type="text/javascript">
+          // Event - When the value changes, the price will be updated
+          function getCarPrice() {
+            console.log("Action Fired");
+
+            // Get Input
+            var year = document.getElementById("year").value;
+            var carCondition = document.getElementById("condition").value;
+            console.log(year, carCondition);
+
+            // Decision
+            var price = 0;
+            if (year == "2003" && carCondition == "fair") {
+              price = 2000;
+                } else if (year == "2003" && carCondition == "good") {
+                 price = 3000;
+                    } else if (year == "2004" && carCondition == "fair") {
+                     price = 4000;
+                        } else if (year == "2004" && carCondition == "good") {
+                            price = 6000;
+            }
+            console.log(price);
+
+            // Output
+            document.getElementById("price").textContent = price.toString();
+          }
+
+          // Register the event with event handler
+          document.getElementById("year").addEventListener("change", getCarPrice, false);
+          document.getElementById("condition").addEventListener("change", getCarPrice, false);
+        </script>
+      </div>
+
+      <div class="practice">
+        <h1>Decision Statement - Switch</h1>
+        <p>
+          Choose your favorite theme(warm, cool, hot)
+          <input type="text" id="theme" />
+        </p>
+
+        <script>
+          // Event - Blur
+          function changeTheme() {
+            console.log("Change Theme");
+            var theme = document.getElementById("theme").value;
+            console.log(theme);
+
+            var color = "white";
+            switch (theme) {
+              case "warm":
+                color = "green";
+                break;
+
+              case "hot":
+                color = "red";
+                break;
+
+              case "cool":
+                color = "blue";
+                break;
+
+              default:
+                break;
+            }
+
+            document.body.style.backgroundColor = color;
+            console.log(color);
+          }
+
+          // Register
+          document
+            .getElementById("theme")
+            .addEventListener("blur", changeTheme, false);
+        </script>
+      </div>
+
+      <div class="practice">
+        <h1>Switch practice -- Insurance Application</h1>
+        <p>
+          Choose your coverage
+          <input type="radio" name="coverage" id="cover1" value="100000" />100000
+          <input type="radio" name="coverage" id="cover2" value="200000" />200000
+          <input type="radio" name="coverage" id="cover3" value="300000" />300000
+        </p>
+        <p>
+          Choose your age group.
+          <select id="agegroup">
+            <option>under 30</option>
+            <option>30-34</option>
+            <option>35-39</option>
+            <option>40-44</option>
+
+            <option>45-49</option>
+            <option>50-54</option>
+            <option>55-59</option>
+            <option>60-64</option>
+          </select>
+        </p>
+        <p>
+          <input type="button" value="Check Premium" />
+        </p>
+        <p id="result"></p>
+
+        <script>
+            // Event
+            function getPremium() {
+                // Get Coverage Input
+                var coverage = parseFloat(document.querySelector('input[name="coverage"]:checked').value);
+                console.log(coverage);
+
+                // Age Group Input
+                var ageindex = document.getElementById("agegroup").selectedIndex;
+                console.log(ageindex)
+
+                // Decision
+                var premium = 0;
+                var base = 10;
+                var agefactor = 0;
+
+                switch (ageindex) {
+                  case 0:
+                    agefactor = 0.08;
+                    break;
+                  case 1:
+                    agefactor = 0.09;
+                    break;
+                  case 2:
+                    agefactor = 0.11;
+                    break;
+                  case 3:
+                    agefactor = 0.17;
+                    break;
+                  case 4:
+                    agefactor = 0.29;
+                    break;
+                  case 5:
+                    agefactor = 0.48;
+                    break;
+                  case 6:
+                    agefactor = 0.75;
+                    break;
+                  case 7:
+                    agefactor = 1.17;
+                    break;
+                  default:
+                    break;
                 }
-            </script>
-            <p> <input type="text" name="num1" /> + <input type="text" name="num2">
-                <input type="button" value="=" onclick="calculate();">
-                <label id="result"> ? </label>
-            </p>
+                premium = base + agefactor * coverage/1000;
+            }
+            
+            var radioE = document.getElementById("cover1").checked;
+            console.log(radioE);
 
+            document.querySelector('input[value="Check Premium"]').addEventListener("click", getPremium, false);
+        </script>
+
+      </div>
+
+      <div class="practice">
+        <h1>For Loop Practice 1</h1>
+        <p>Display the square of numer 1... N</p>
+        <p>N = <input type="number" min="1" max="10" id="inputnumber1" /></p>
+        <p>
+          <input type="button" value="Click for Square" />
+        </p>
+      </div>
+
+      <div class="practice">
+        <h1>For Loop Practice 2</h1>
+        <!--  Input number box -->
+        <p>N = <input type="number" min="1" max="10" id="inputnumber2" /></p>
+        <p>
+          <input type="button" id="dotable" value="Click for multiplication table" />
+        </p>
+
+        <!-- output section -->
+        <div id="looptable"></div>
+
+        <script>
+          function maketable() {
+            console.log("Button")
+
+            var num = parseInt(document.getElementById("inputnumber2").value);
+            var output = "";
+
+            output += "<table>"
+            // Calculation
+            for (var i = 1; i <= num; i++) {
+              output += "<tr>";
+                for (var a = 1; a <= num; a++) {
+                  product = i * a;
+                  output += "<td>" + i + "x" + a + "=" + product + " </td";
+                }
+              output += "</tr>";
+            }
+            output += "</table>"
+            console.log(output);
+            document.getElementById("looptable").innerHTML = output;
+          }
+
+          // Bind the Event 
+          document.getElementById("dotable").addEventListener("click", maketable, false);
+
+        </script>
+
+      </div>
+
+      <div class="practice">
+        <h1>For loop practice 3 -Math Drill</h1>
+        <p>N = <input type="number" min="1" max="10" id="inputnumber3" /></p>
+
+        <p>
+          <input type="button" value="Click for multiplication drill" />
+        </p>
+        <script src="js\mathdrill.js"></script>
+      </div>
+
+      <div class="practice">
+        <h1>A simple JavaScript Quiz</h1>
+        <p>A simple JavaScript Quiz</p>
+        <p>
+          Target: Generate a simple substract and add problems using JavaScript
+          and then check the answers
+        </p>
+        <a href="quiz1.html">Do your practice in quiz1.html</a>
+      </div>
+
+      <div class="practice">
+        <h1>Change Attribute -- Rolling a dice</h1>
+        <p><input type="button" id="roll" value="roll" /></p>
+        <p><img id="dice" src="img/die1.png" /></p>
+        <table>
+          <tr>
+            <th>Result</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+          </tr>
+          <tr>
+            <th>Statistics</th>
+            <td id="r1"></td>
+            <td id="r2"></td>
+            <td id="r3"></td>
+            <td id="r4"></td>
+            <td id="r5"></td>
+            <td id="r6"></td>
+          </tr>
+        </table>
+        <script>
+          function randDice() {
+            // Function for Random Number (Rounded)
+            return Math.floor(Math.random() * 10)
+          }
+
+          var statistics = [0, 0, 0, 0, 0, 0];
+
+          function rollDice() {
+            // Get Random Number 1 - 6
+            var diceNum = randDice(1, 6);
+            console.log("Dice Number = " + diceNum);
+
+            // Update Statistics 
+            statistics[diceNum - 1] += 1;
+
+            // Update Image Off of Random Number
+            var a = document.getElementById("dice");
+            a.setAttribute("src", "img/die" + diceNum + ".png");
+
+            // Update Table
+            document.getElementById("r" + diceNum).textContent = statistics[diceNum - 1].toString();
+          }
+
+          // Event 
+          document.getElementById("roll").addEventListener("click", rollDice, false);
+
+
+          // Practice On Array
+          /*
+          var testArray = [1, 2, 3, 4, 5, 6];
+          testArray.push(7);
+          testArray.push(10);
+          testArray.pop();
+          console.log(testArray);
+
+          // Java For Loop
+          for (var i = 0; i < testArray.lentgh; i++) {
+            console.log(i, testArray[i]);
+          }
+
+          // Another Way For Loop
+          testArray.forEach(e => console.log(e)) */
+
+        </script>
+      </div>
+
+      <div class="practice">
+        <h1>Array example - Image banner</h1>
+        <div class="img-container-hide">
+          <img src="img/usca1.jpg" alt="usca" />
         </div>
-
-        <div class="practice">
-            <h1>JavaScript Events - blur -addEventListener </h1>
-            <form>
-                <p>
-                    <label> Name:
-                        <input type="text" id="cName">
-                    </label>
-                </p>
-
-                <p id="message">
-
-                </p>
-
-                <p>
-                    <label> Email:
-                        <input type="text" id="cEmail">
-                    </label>
-                </p>
-            </form>
-
+        <div class="img-container-hide">
+          <img src="img/usca2.jpg" alt="usca" />
         </div>
-
-        <div class="practice">
-            <h1> Practice - Calculate Square</h1>
-            Calculating Square:
-            <input type="text" id="num" placeholder="Type in a number"> <sup> 2 </sup> =
-            <label id="result"> ? </label>
-
+        <div class="img-container-hide">
+          <img src="img/usca3.jpg" alt="usca" />
         </div>
-
-        <div class="practice">
-            <h1> Difference between textcontent and innerHTML</h1>
-            <p> HTML Try it Editor </p>
-            <p>ENTER your code </p>
-            <textarea cols="40" rows="20" id="code">  
-
-            </textarea>
-
-            <input type="button" id="tryit" value="Click and Display"> 
-
-            <div id="message"> 
-            </div>
-
-
+        <div class="img-container-hide">
+          <img src="img/usca4.jpg" alt="usca" />
         </div>
-
-        <div class="practice">
-            <h1>Decision statement - If </h1>
-            Honda Accord Used Car price estimate,
-            <p>Please enter the year of the car
-                <select id="year">
-                    <option> 2003</option>
-                    <option> 2004</option>
-                </select>.</p>
-            <p>Please enter the condition of the car
-                <select id="condition">
-                    <option> Fair</option>
-                    <option> Good</option>
-                </select>.</p>
-
-            <p id="price">
-
-            </p>
-
-            <script type="text/javascript">
-
-
-
-            </script>
-
+        <div class="img-container-hide">
+          <img src="img/usca5.jpg" alt="usca" />
         </div>
+        <script>
+          var imageList = document.querySelectorAll(".img-container-hide");
+          var index = 0;
+          imageList[index].setAttribute("class", "img-container");
 
-        <div class="practice">
-            <h1> Decision Statement - Switch</h1>
-            <p> Choose your favorite theme(warm, cool, hot)
-                <input type="text" id="theme">
-            </p>
+          function changeImage() {
+            imageList[index].setAttribute("class", "img-container-hide");
+            index++;
+            index = index % 5;
+            imageList[index].setAttribute("class", "img-container");
+          }
 
-        </div>
+          // Auto Update
+          setInterval(changeImage, 5000);
+          
+        </script>
+      </div>
 
-
-
-        <div class="practice">
-            <h1> Switch practice -- Insurance Application</h1>
-            <p> Choose your coverage
-                <input type="radio" name="coverage" value="100000">100000
-                <input type="radio" name="coverage" value="200000">200000
-                <input type="radio" name="coverage" value="300000">300000
-
-            </p>
-            <p> Choose your age group.
-                <select id="agegroup">
-                    <option> under 30 </option>
-                    <option> 30-34 </option>
-                    <option> 35-39</option>
-                    <option> 40-44 </option>
-
-                </select>
-
+      <div class="practice">
+        <h1>JavaScript Object</h1>
+        <p>Hotel registration</p>
+        <div>
+          <form>
+            <p>Name: <input type="text" id="name" /></p>
+            <p>
+              Check in: <input type="date" id="checkin" /> Check out:
+              <input type="date" id="checkout" />
             </p>
             <p>
-                <input type="button" value="Check Premium">
+              Number of guest: <input type="number" id="num" min="0" max="5" />
             </p>
-            <p id="result">
-
-            </p>
-
-        </div>
-
-
-
-
-        <div class="practice">
-            <h1>For Loop Practice 1 </h1>
-            <p> Display the square of numer 1... N </p>
-            <p> N = <input type="number" min="1" max="10" id="inputnumber1"> </p>
             <p>
-                <input type="button" value="Click for Square">
+              Room Type:
+              <select id="room">
+                <option>1 Bedroom Smaller Suite $139</option>
+                <option>1 Bedroom Larger Suite $169</option>
+                <option>1 Bedroom Junior Suite $289</option>
+                <option>Grand Suite $289</option>
+              </select>
             </p>
-
-        </div>
-
-
-        <div class="practice">
-            <h1>For Loop Practice 2 </h1>
-            <!--  Input number box -->
-            <p> N = <input type="number" min="1" max="10" id="inputnumber2"> </p>
             <p>
-                <input type="button" value="Click for multiplication table">
+              <input id="submit" type="button" value="submit" />
             </p>
-
-            <!-- output section -->
-            <div id="output">
-
-
-            </div>
-
-        </div>
-
-
-        <div class="practice">
-            <h1>For loop practice 3 -Math Drill </h1>
-            <p> N = <input type="number" min="1" max="10" id="inputnumber3"> </p>
-
             <p>
-                <input type="button" value="Click for multiplication drill">
+              <input
+                id="lists"
+                type="button"
+                value="List current reservations"
+              />
             </p>
-            <script src="js\mathdrill.js">
-            </script>
+          </form>
+          <div id="reservationList"></div>
+          <script src="js/hotel.js"></script>
         </div>
+      </div>
 
-        <div class="practice">
-            <h1> A simple JavaScript Quiz</h1>
-            <p> A simple JavaScript Quiz </p>
-            <p>Target: Generate a simple substract and add problems using JavaScript and then check the answers</p>
-            <a href="quiz1.html">Do your practice in quiz1.html</a>
-        </div>
+      <div class="practice">
+        <h1>HTML Canvas</h1>
+        <canvas
+          id="myCanvas"
+          width="200"
+          height="100"
+          style="border: 1px solid #000000"
+        >
+          Your browser does not support the HTML5 canvas tag.</canvas
+        >
+        <div id="drawing"></div>
+        <p>Some P5.js examples</p>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js"></script>
+        <script src="js/draw.js"></script>
+      </div>
 
-        <div class="practice">
-            <h1>Change Attribute -- Rolling a dice </h1>
-            <p> <input type="button" id="roll" value="roll" /> </p>
-            <p> <img src="img/die1.png"> </p>
-            <table>
-                <tr>
-                    <th>Result</th>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>3</th>
-                    <th>4</th>
-                    <th>5</th>
-                    <th>6</th>
-                </tr>
-                <tr>
-                    <th>Statistics</th>
-                    <td id="r1"></td>
-                    <td id="r2"></td>
-                    <td id="r3"></td>
-                    <td id="r4"></td>
-                    <td id="r5"></td>
-                    <td id="r6"></td>
-                </tr>
-            </table>
-
-        </div>
-
-
-        <div class="practice">
-            <h1> Array example - Image banner</h1>
-            <div class="img-container-hide">
-                <img src="img/usca1.jpg" alt="usca" />
-            </div>
-            <div class="img-container-hide">
-                <img src="img/usca2.jpg" alt="usca" />
-            </div>
-            <div class="img-container-hide">
-                <img src="img/usca3.jpg" alt="usca" />
-            </div>
-            <div class="img-container-hide">
-                <img src="img/usca4.jpg" alt="usca">
-            </div>
-            <div class="img-container-hide">
-                <img src="img/usca5.jpg" alt="usca">
-            </div>
-			<script>
-				
-			</script>
-
-
-        </div>
-
-
-        <div class="practice">
-            <h1>JavaScript Object </h1>
-            <p> Hotel registration </p>
-            <div>
-                <form>
-                    <p>
-                        Name: <input type="text" id="name">
-                    </p>
-                    <p>
-                        Check in: <input type="date" id="checkin"> Check out: <input type="date" id="checkout">
-                    </p>
-                    <p>
-                        Number of guest: <input type="number" id="num" min="0" max="5">
-                    </p>
-                    <p>
-                        Room Type: <select id="room">
-                            <option>1 Bedroom Smaller Suite $139 </option>
-                            <option> 1 Bedroom Larger Suite $169 </option>
-                            <option> 1 Bedroom Junior Suite $289</option>
-                            <option> Grand Suite $289</option>
-                        </select>
-                    </p>
-                    <p>
-                        <input id="submit" type="button" value="submit">
-                    </p>
-                    <p>
-                        <input id="lists" type="button" value="List current reservations">
-                    </p>
-                </form>
-                <script src="js/hotel.js"></script>
-            </div>
-
-        </div>
-
-
-        <div class="practice">
-            <h1>  HTML Canvas </h1>
-            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
-                    Your browser does not support the HTML5 canvas tag.</canvas>
-            <div id="drawing">  </div>
-            <p> Some P5.js examples </p>
-            <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js"></script>
-            <script src="js/draw.js"></script>
-        </div>
-
-
-        <div class="practice">
-            <h1>Continue other practices</h1>
-            <a href="JSON.html">JSON Practice</a>
-            <a href="element.html"> Element Practice </a>
-        </div>
-
-
-
+      <div class="practice">
+        <h1>Continue other practices</h1>
+        <a href="JSON.html">JSON Practice</a>
+        <a href="element.html"> Element Practice </a>
+      </div>
     </div>
     <div class="extra1"></div>
     <div class="extra2"></div>
     <div class="extra3"></div>
     <div class="extra4"></div>
-    <script src="script.js"> </script>
+    <script src="script.js"></script>
     <script src="js/practice.js"></script>
-
-
-</body>
-
+  </body>
 </html>
